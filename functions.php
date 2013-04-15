@@ -29,24 +29,26 @@
            return preg_replace($pattern,$replacement, $s_arv);
   
   }
- function number($data){
-         
-           if (empty($data)){
+  function number($data){
+           $pattern='/^nt/'; 
+           if (($data =="") || preg_match($pattern, $data)){
                 $error = '<p class="er-msg">Väli on täitmata!</p>';
                  
                
                 
            }
-           if (!empty($data)){
+           
+       else {
                
                  if (!is_numeric($data)){
                 $error = '<p class="er-msg">Ei ole number!</p>';
                
                 } 
            }
-             return $error;
-
-           }
+           
+    
+           return $error;
+    } 
            
    function valik($data){
           if (empty($data)){
